@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>Your Events</h2>
+<ul>
+    {% for event in events %}
+    <li><a href="{% url 'core:event_detail' event.id %}">{{ event.event_type }} - {{ event.timestamp }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock%}
